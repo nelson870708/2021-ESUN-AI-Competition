@@ -12,12 +12,12 @@ Data Preprocessing.ipynb
 FineTuning ResNet18.ipynb
 training data dict.txt
 ```
-run Data Preprocessing.ipynb to split training data into training data and validation data.
+Run Data Preprocessing.ipynb to split training data into training data and validation data.
 
 ## Data Analysis
 
-run Data Analysis.ipynb to display some feature from the data.
+Run Data Analysis.ipynb to display some feature from the data.
 
 ## FineTuning and Evaluation
 
-run FineTuning ResNet18.ipynb to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
+Run FineTuning ResNet18.ipynb to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
