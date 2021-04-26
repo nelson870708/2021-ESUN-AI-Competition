@@ -5,7 +5,7 @@
 You should put the data and code as the structure below.
 
 ```
-+- train
++- data
   +- all // Put all the training images here
 Data Analysis.ipynb
 Data Preprocessing.ipynb
