@@ -21,3 +21,7 @@ Run Data Analysis.ipynb to display some feature from the data.
 ## FineTuning and Evaluation
 
 Run FineTuning ResNet18.ipynb to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
+
+## Acknowledgment
+
+[Transfer Learning For Computer Vision Tutorial](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)
