@@ -1,6 +1,12 @@
 # 2021-ESUN-AI-Competition
 
+## Introduction
+
+This is a Chinese handwriting recognition project. The dataset is provided by Esun Bank.
+
 ## Data Prepared
+
+You can get the dataset by signing in the [website](https://tbrain.trendmicro.com.tw/Competitions/Details/14), which is provided by Trend Micro.
 
 You should put the data and code as the structure below.
 
