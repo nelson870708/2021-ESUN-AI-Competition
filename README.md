@@ -1,7 +1,5 @@
 # 2021-ESUN-AI-Competition
 
-## Introduction
-
 This is a Chinese handwriting recognition project. The dataset is provided by Esun Bank.
 
 ## Data Prepared
