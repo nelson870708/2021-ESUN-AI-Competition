@@ -38,3 +38,4 @@ Run **Data Analysis.ipynb** to display some feature from the data.
 ## References
 
 - [Transfer Learning For Computer Vision Tutorial](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)
+- [EfficientNet PyTorch](https://github.com/lukemelas/EfficientNet-PyTorch)
