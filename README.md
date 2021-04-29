@@ -19,15 +19,21 @@ You should put the data and code as the structure below.
 ├─ FineTuning ResNet18.ipynb
 └─ training data dict.txt
 ```
-Run Data Preprocessing.ipynb to split training data into training data and validation data.
+Run **Data Preprocessing.ipynb** to split training data into training data and validation data.
 
 ## Data Analysis
 
-Run Data Analysis.ipynb to display some feature from the data.
+Run **Data Analysis.ipynb** to display some feature from the data.
 
 ## FineTuning and Evaluation
 
-Run FineTuning ResNet18.ipynb to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
+- ResNet18
+
+  Run **FineTuning ResNet18.ipynb** to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
+  
+- EfficientNet-B7
+
+  Run **FineTuning EfficientNet-B7.ipynb** to finetune EfficientNet-B7 with pretrained weight (pretrain via ImageNet).
 
 ## References
 
