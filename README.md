@@ -10,10 +10,17 @@ You should put the data and code as the structure below.
 
 ```
 ├── data
-│   └── all
+│   │── all
+│   │   ├── 0_戶.jpg
+│   │   ├── 1_經.jpg
+│   │   └── ...
+│   └── clean
 │       ├── 0_戶.jpg
 │       ├── 1_經.jpg
 │       └── ...
+├── models  // optional, if you don't want to train the model by yourself
+│   ├── efficientnet-b3_epoch100.pth
+│   └── ...
 ├─ Data Analysis.ipynb
 ├─ Data Preprocessing.ipynb
 ├─ FineTuning ResNet18.ipynb
@@ -34,6 +41,12 @@ Run **Data Analysis.ipynb** to display some feature from the data.
 - EfficientNet-B7
 
   Run **FineTuning EfficientNet-B7.ipynb** to finetune EfficientNet-B7 with pretrained weight (pretrain via ImageNet).
+
+## Evaluation
+
+You must to have model in directory "models".
+
+Run **Evaluation.ipynb** to evaluate some cases of the validation data.
 
 ## References
 
