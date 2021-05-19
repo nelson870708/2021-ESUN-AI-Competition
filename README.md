@@ -18,7 +18,7 @@ You should put the data and code as the structure below.
 │       ├── 0_戶.jpg
 │       ├── 1_經.jpg
 │       └── ...
-├── model  // optional, if you don't want to train the model by yourself
+├── models  // optional, if you don't want to train the model by yourself
 │   ├── efficientnet-b3_epoch100.pth
 │   └── ...
 ├─ Data Analysis.ipynb
