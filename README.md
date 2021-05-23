@@ -30,9 +30,9 @@ Run **Data Analysis.ipynb** to display some feature from the data.
 
 ## FineTuning and Evaluation
   
-- EfficientNet-B3
+EfficientNet-B3
 
-  Run **FineTuning EfficientNet-B3.ipynb** to finetune EfficientNet-B3 with pretrained weight (pretrain via ImageNet).
+Run **FineTuning EfficientNet-B3.ipynb** to finetune EfficientNet-B3 with pretrained weight (pretrain via ImageNet).
 
 ## Evaluation
 
