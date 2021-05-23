@@ -10,10 +10,6 @@ You should put the data and code as the structure below.
 
 ```
 ├── data
-│   │── all
-│   │   ├── 0_戶.jpg
-│   │   ├── 1_經.jpg
-│   │   └── ...
 │   └── clean
 │       ├── 0_戶.jpg
 │       ├── 1_經.jpg
@@ -23,8 +19,8 @@ You should put the data and code as the structure below.
 │   └── ...
 ├─ Data Analysis.ipynb
 ├─ Data Preprocessing.ipynb
-├─ FineTuning ResNet18.ipynb
-└─ training data dict.txt
+├─ Evaluation.ipynb
+└─ FineTuning ResNet18.ipynb
 ```
 Run **Data Preprocessing.ipynb** to split training data into training data and validation data.
 
@@ -33,14 +29,10 @@ Run **Data Preprocessing.ipynb** to split training data into training data and v
 Run **Data Analysis.ipynb** to display some feature from the data.
 
 ## FineTuning and Evaluation
-
-- ResNet18
-
-  Run **FineTuning ResNet18.ipynb** to finetune ResNet18 with pretrained weight (pretrain via ImageNet).
   
-- EfficientNet-B7
+- EfficientNet-B3
 
-  Run **FineTuning EfficientNet-B7.ipynb** to finetune EfficientNet-B7 with pretrained weight (pretrain via ImageNet).
+  Run **FineTuning EfficientNet-B3.ipynb** to finetune EfficientNet-B3 with pretrained weight (pretrain via ImageNet).
 
 ## Evaluation
 
