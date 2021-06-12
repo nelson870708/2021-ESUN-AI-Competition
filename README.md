@@ -4,7 +4,7 @@ This is a Chinese handwriting recognition project. The dataset is provided by Es
 
 ## Installation
 
-Assume you have a container with gpu, which cuda version >= 11.1
+Assume you have a container with gpu and cuda version >= 11.1
 
 1. Install Pytorch
    
