@@ -2,6 +2,22 @@
 
 This is a Chinese handwriting recognition project. The dataset is provided by Esun Bank.
 
+## Installation
+
+Assume you have a container with gpu, which cuda version is greater than 11.1
+
+1. Install Pytorch
+   
+    You may type the instruction below or follow [the official website](https://pytorch.org/get-started/locally/) to install Pytorch.
+    
+   ```bash
+    pip3 install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+    ```
+   
+2. Install EfficientNet-PyTorch with `pip install efficientnet_pytorch`
+
+3. Install other requirements by `pip install -r requirements`
+
 ## Code Structure
 
 You should put the code as the structure below.
