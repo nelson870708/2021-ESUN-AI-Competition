@@ -16,7 +16,7 @@ Assume you have a container with gpu, which cuda version is greater than 11.1
    
 2. Install EfficientNet-PyTorch with `pip install efficientnet_pytorch`
 
-3. Install other requirements by `pip install -r requirements`
+3. Install other requirements by `pip install -r requirements.txt`
 
 ## Code Structure
 
