@@ -2,43 +2,59 @@
 
 This is a Chinese handwriting recognition project. The dataset is provided by Esun Bank.
 
-## Data Prepared
+## Code Structure
 
-You can get the dataset by signing in the [website](https://tbrain.trendmicro.com.tw/Competitions/Details/14), which is provided by Trend Micro.
-
-You should put the data and code as the structure below.
+You should put the code as the structure below.
 
 ```
-├── data
-│   └── clean
+├── data  // optional, you can put your data wherever you want
+│   └── clean v2
 │       ├── 0_戶.jpg
 │       ├── 1_經.jpg
 │       └── ...
-├── models  // optional, if you don't want to train the model by yourself
-│   ├── efficientnet-b3_epoch100.pth
+├── lib
+│   ├── dataset.py
+│   ├── model.py
+│   └── options.py
+│
+├── models  // optional, you can put your models wherever you want
+│   ├── efficientnet-b0.pth
 │   └── ...
-├─ Data Analysis.ipynb
-├─ Data Preprocessing.ipynb
-├─ Evaluation.ipynb
-└─ FineTuning ResNet18.ipynb
+├─ main.py
+├─ README.md
+└─ requirements.txt
 ```
-Run **Data Preprocessing.ipynb** to split training data into training data and validation data.
 
-## Data Analysis
+## FineTuning EfficientNet
 
-Run **Data Analysis.ipynb** to display some feature from the data.
+To list the arguments, run the following command:
+```
+python main.py -h
+```
 
-## FineTuning and Evaluation
-  
-EfficientNet-B3
+### Training on custom data
 
-Run **FineTuning EfficientNet-B3.ipynb** to finetune EfficientNet-B3 with pretrained weight (pretrain via ImageNet).
+To train the model on custom data, you can modify the following command and run it.
 
-## Evaluation
+For more training options, please check the arguments.
 
-You must to have model in directory "models".
+```bash
+python main.py \
+ --dataroot </your/image/dir> \
+ --n_epoch <number of epoch> \
+ --model_name <efficientnet-bx> \
+ --load_weights_path </your/model/path>        
+```
 
-Run **Evaluation.ipynb** to evaluate some cases of the validation data.
+For example:
+
+```bash
+python main.py \
+ --dataroot ./data/clean v2 \
+ --n_epoch 10 \
+ --model_name efficientnet-b0 \
+ --load_weights_path ./models/efficientnet-b0.pth        
+```
 
 ## References
 
