@@ -24,10 +24,11 @@ You should put the code as the structure below.
 
 ```
 ├── data  // optional, you can put your data wherever you want
-│   └── clean v2
-│       ├── 0_戶.jpg
-│       ├── 1_經.jpg
-│       └── ...
+│   ├── clean v2
+│   │   ├── 0_戶.jpg
+│   │   ├── 1_經.jpg
+│   │   └── ...
+│   └── training data dic.txt
 ├── lib
 │   ├── dataset.py
 │   ├── model.py
