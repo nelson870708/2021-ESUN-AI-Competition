@@ -12,7 +12,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
 
-class Model():
+class Model:
     def __init__(self, opt):
         self.opt = opt
 
@@ -127,3 +127,6 @@ class Model():
             self.writer.close()
 
         return hist
+
+    def predict(self, test_dataloader):
+        return
