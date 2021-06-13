@@ -12,7 +12,7 @@ Install the requirements by `pip install -r requirements.txt`
 
 You should put the code as the structure below.
 
-```
+``` shell
 ├── data  // optional, you can put your data wherever you want
 │   ├── clean v2
 │   │   ├── 0_戶.jpg
