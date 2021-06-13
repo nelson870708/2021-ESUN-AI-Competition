@@ -20,7 +20,6 @@ class Options:
 
     def __init__(self):
         self.parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-
         self.parser.add_argument('--dataroot', default='./data/clean v2', help='path to dataset')
         self.parser.add_argument('--split_rate', type=int, default=0.8,
                                  help='split training and valid data by the split rate')
@@ -36,12 +35,18 @@ class Options:
         self.parser.add_argument('--tensorboard', action='store_true', help='output tensorboard log')
         self.parser.add_argument('--tensorboard_logdir', type=str, default='runs',
                                  help='only work when "tensorboard" is true')
+        self.parser.add_argument('--lr_scheduler', type=str, default='CosineAnnealingWarmRestarts',
+                                 help='set a learning rate scheduler')
+        self.parser.add_argument('--lr', type=int, default=0.001, help='set learning rate')
+        self.parser.add_argument('--optimizer', type=str, default='Adam', help='set a optimizer')
 
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
         official_dict = './data/training data dic.txt'
         with open(official_dict, encoding='utf-8') as f:
             self.word_set = f.read().split()
+
+        self.num_class = len(self.word_set) + 1
 
         self.opt = None
 
@@ -54,6 +59,7 @@ class Options:
 
         self.opt.device = self.device
         self.opt.word_set = self.word_set
+        self.opt.num_class = self.num_class
 
         if not os.path.isdir(self.opt.outfile):
             os.makedirs(self.opt.outfile)
