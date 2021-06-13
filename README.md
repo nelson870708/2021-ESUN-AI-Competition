@@ -4,7 +4,7 @@ This is a Chinese handwriting recognition project. The dataset is provided by Es
 
 ## Installation
 
-Assume you have a container with gpu, which cuda version is greater than 11.1
+Assume you have a container with gpu and cuda version >= 11.1
 
 1. Install Pytorch
    
@@ -24,10 +24,11 @@ You should put the code as the structure below.
 
 ```
 ├── data  // optional, you can put your data wherever you want
-│   └── clean v2
-│       ├── 0_戶.jpg
-│       ├── 1_經.jpg
-│       └── ...
+│   ├── clean v2
+│   │   ├── 0_戶.jpg
+│   │   ├── 1_經.jpg
+│   │   └── ...
+│   └── training data dic.txt
 ├── lib
 │   ├── dataset.py
 │   ├── model.py
