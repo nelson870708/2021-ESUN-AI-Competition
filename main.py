@@ -40,7 +40,7 @@ def main():
     # data augmentation and normalize
     data_transforms = {
         'train': transforms.Compose([
-            transforms.Resize((opt.img_size, opt.img_size)),
+            transforms.RandomResizedCrop(opt.img_size, scale=(0.9, 1.0)),
             transforms.RandomAffine(15, (0.1, 0.1)),
             transforms.ToTensor(),
             transforms.Normalize([0.726, 0.686, 0.695], [0.205, 0.210, 0.183])
