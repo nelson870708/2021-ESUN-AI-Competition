@@ -11,6 +11,8 @@ class ChineseWordsDataset(Dataset):
     def __init__(self, img_paths, labels, transform=None):
         """
         Args:
+            img_paths (list, str): List of paths of images.
+            labels (list, int): List of labels correspond to the images.
             transform (callable, optional): Optional transform to be applied on an image.
         """
         self.img_paths = img_paths

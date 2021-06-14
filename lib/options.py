@@ -15,7 +15,7 @@ class Options:
     Options class
 
     Returns:
-        [argparse]: argparse containing train and test options
+        [argparse]: argparse containing train options
     """
 
     def __init__(self):
@@ -23,22 +23,22 @@ class Options:
         self.parser.add_argument('--dataroot', default='./data/train', help='path to dataset')
         self.parser.add_argument('--split_rate', type=int, default=0.8,
                                  help='split training and valid data by the split rate')
+        self.parser.add_argument('--img_size', type=int, default=64, help='input image size.')
         self.parser.add_argument('--batch_size', type=int, default=64, help='input batch size')
         self.parser.add_argument('--workers', type=int, help='number of data loading workers', default=6)
-        self.parser.add_argument('--img_size', type=int, default=64, help='input image size.')
         self.parser.add_argument('--model_name', type=str, default='efficientnet-b0',
                                  help='chooses which efficientnet to use.')
-        self.parser.add_argument('--outfile', default='./output', help='folder to output model checkpoints')
         self.parser.add_argument('--load_weights_path', default='', help='path to checkpoints (to continue training)')
-        self.parser.add_argument('--start_epoch', type=int, default=0, help='start from epoch i')
         self.parser.add_argument('--n_epoch', type=int, default=50, help='number of epochs to train for')
-        self.parser.add_argument('--tensorboard', action='store_true', help='output tensorboard log')
-        self.parser.add_argument('--tensorboard_logdir', type=str, default='runs',
-                                 help='only work when "tensorboard" is true')
+        self.parser.add_argument('--start_epoch', type=int, default=0, help='start from epoch i')
+        self.parser.add_argument('--outfile', default='./output', help='folder to output model checkpoints')
         self.parser.add_argument('--lr_scheduler', type=str, default='CosineAnnealingWarmRestarts',
                                  help='set a learning rate scheduler')
         self.parser.add_argument('--lr', type=int, default=0.001, help='set learning rate')
         self.parser.add_argument('--optimizer', type=str, default='Adam', help='set a optimizer')
+        self.parser.add_argument('--tensorboard', action='store_true', help='output tensorboard log')
+        self.parser.add_argument('--tensorboard_logdir', type=str, default='runs',
+                                 help='only work when "tensorboard" is true')
 
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
