@@ -4,7 +4,6 @@ import time
 
 import torch
 import torch.nn as nn
-from PIL.Image import Image
 from efficientnet_pytorch import EfficientNet
 from torch import optim
 from torch.optim import lr_scheduler
@@ -36,7 +35,7 @@ class Model:
         if opt.tensorboard:
             self.writer = SummaryWriter(log_dir=opt.tensorboard_logdir)
 
-    def fit(self, train_dataloader, val_dataloader):
+    def fit(self, dataloaders):
         since = time.time()
 
         best_model_wts = copy.deepcopy(self.model.state_dict())
@@ -44,7 +43,7 @@ class Model:
         hist = []
 
         for epoch in range(self.opt.start_epoch, self.opt.start_epoch + self.opt.n_epoch):
-            print(f'Epoch {epoch}/{self.opt.start_epoch + self.opt.n_epoch - 1}')
+            print(f'Epoch {epoch}/{self.opt.start_epoch + self.opt.n_epoch}')
             print('-' * 10)
 
             train_loss = 0
@@ -55,16 +54,14 @@ class Model:
             for phase in ['train', 'val']:
                 if phase == 'train':
                     self.model.train()  # Set model to training mode
-                    dataloader = train_dataloader
                 else:
                     self.model.eval()  # Set model to evaluate mode
-                    dataloader = val_dataloader
 
                 running_loss = 0.0
                 running_corrects = 0
 
                 # Iterate over data.
-                for inputs, labels in tqdm(dataloader):
+                for inputs, labels in tqdm(dataloaders[phase]):
                     inputs = inputs.to(self.opt.device)
                     labels = labels.to(self.opt.device)
 
@@ -75,7 +72,7 @@ class Model:
                     # track history if only in train
                     with torch.set_grad_enabled(phase == 'train'):
                         outputs = self.model(inputs)
-                        _, preds = torch.max(outputs, 1)
+                        _, predicts = torch.max(outputs, 1)
                         loss = self.criterion(outputs, labels)
 
                         # backward + optimize only if in training phase
@@ -87,11 +84,10 @@ class Model:
 
                     # statistics
                     running_loss += loss.item() * inputs.size(0)
-                    running_corrects += torch.sum(preds == labels.data)
+                    running_corrects += torch.sum(predicts == labels.data)
 
-                epoch_loss = running_loss / self.opt.dataset_sizes[phase]
-                epoch_acc = running_corrects / self.opt.dataset_sizes[phase]
-
+                epoch_loss = running_loss / len(dataloaders[phase].dataset)
+                epoch_acc = running_corrects / len(dataloaders[phase].dataset)
                 print(f'{phase} Loss: {epoch_loss: .4f} Acc: {epoch_acc: .4f}')
 
                 if phase == 'train':
