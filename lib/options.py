@@ -21,7 +21,7 @@ class Options:
     def __init__(self):
         self.parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
         self.parser.add_argument('--dataroot', default='./data/train', help='path to dataset')
-        self.parser.add_argument('--split_rate', type=int, default=0.8,
+        self.parser.add_argument('--split_rate', type=float, default=0.8,
                                  help='split training and valid data by the split rate')
         self.parser.add_argument('--img_size', type=int, default=64, help='input image size.')
         self.parser.add_argument('--batch_size', type=int, default=64, help='input batch size')
